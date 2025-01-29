@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación de Rosa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .rose-pot {
+            width: 200px;
+            height: 200px;
+            background-color: #8B4513;
+            border-radius: 50%;
+            position: relative;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .stem {
+            width: 5px;
+            height: 100px;
+            background-color: #228B22;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: grow 4s ease-in-out forwards;
+        }
+        .bud {
+            width: 20px;
+            height: 20px;
+            background-color: #FFD700;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            animation: growBud 4s ease-in-out forwards;
+            animation-delay: 4s;
+        }
+        .petals {
+            width: 120px;
+            height: 120px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            animation: bloom 6s ease-in-out forwards;
+            animation-delay: 8s;
+            z-index: 1;
+            box-shadow: 0px 0px 15px 5px rgba(231, 76, 60, 0.7);
+        }
+        @keyframes grow {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 100px;
+            }
+        }
+        @keyframes growBud {
+            0% {
+                transform: translateX(-50%) scale(0);
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+        @keyframes bloom {
+            0% {
+                transform: translateX(-50%) scale(0);
+            }
+            50% {
+                transform: translateX(-50%) scale(0.5);
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rose-pot">
+        <div class="stem"></div>
+        <div class="bud"></div>
+        <div class="petals"></div>
+    </div>
+</body>
+</html>
